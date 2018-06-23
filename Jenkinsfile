@@ -13,6 +13,6 @@ node {
    stage 'Build'
    // Run the maven build
    stage 'test'
-   sh "${mvnHome} /bin/mvn -Dmaven.test.failure.ignore clean package"
+   sh "${mvnHome}/bin/mvn -Dmaven.test.failure.ignore clean package"
    step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 }
